@@ -1,0 +1,54 @@
+
+      <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+        <h1 class="text-6xl font-extrabold text-gray-700 sm:text-2xl md:text-5xl">
+          <span class="block ">Calificaciones </span>
+        </h1>    
+        <app-grafico></app-grafico>
+        <div class="flex flex-col">
+            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                  <table class="min-w-full border border-gray-200">
+                    <thead class="bg-white border-b">
+                      <tr >
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                          #
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                          Fecha
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                          E-mail
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                          Calificación
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                          Observaciones
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-gray-100 border-b" *ngFor="let satisfaccion of satisfacciones">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{satisfaccion.id}}</td>
+                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          {{satisfaccion.fecha}}
+                        </td>
+                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          {{satisfaccion.email}}
+                        </td>
+                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          {{satisfaccion.calificacion}}
+                        </td>
+                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          {{satisfaccion.obs}}
+                        </td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+      </main>

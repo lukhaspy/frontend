@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServiceService } from './Service/service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'firstApp';
+  title = 'nivelSatisfaccionApp';
+  constructor(protected service: ServiceService) { }
 }
