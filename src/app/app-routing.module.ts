@@ -9,6 +9,8 @@ const routes: Routes = [
   { path: 'admin/satisfacciones', component: ListarComponent, canActivate: [AuthGuardGuard] },
   { path: 'satisfaccion', component: AddComponent },
   { path: 'login', component: LoginComponent },
+  { path: '', component: AddComponent },
+
 ];
 
 @NgModule({

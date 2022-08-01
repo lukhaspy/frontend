@@ -30,10 +30,12 @@ export class ServiceService {
   }
   createSatisfaccion(satisfaccion: Satisfaccion) {
     this.http.post<Satisfaccion>(this.api + '/api/satisfaccion', satisfaccion).subscribe(data => {
-      Swal.fire({ title: '¡Gracias por su aporte!', html: '<a class="text-red-500" href="https://datapar.com.py">Visite nuestro sitio Web <i class="bi bi-box-arrow-up-right"></i> </a>', icon: 'success' })
+      Swal.fire({ title: '¡Gracias por su aporte!', html: '<a class="text-red-500" href="https://datapar.com.py">Visite nuestro sitio Web <i class="bi bi-box-arrow-up-right"></i> </a>', icon: 'success' }).then(click => {
+        window.location.reload()
+      })
     },
       error => {
-        Swal.fire({ title: 'No se pudo completar la operación...', html: this.displayErrros(error.error) })
+        Swal.fire({ title: 'No se pudo completar la operación...', html: this.showApiErrors(error.error) })
       })
   }
 
@@ -46,20 +48,20 @@ export class ServiceService {
           this.router.navigate(['/admin/satisfacciones']);
         }, (error) => {
           Swal.fire({
-            html: this.displayErrros(error.error.errors),
+            html: this.showApiErrors(error.error.errors),
             icon: 'error'
           })
         });
     })
   }
-  authLoggedIn() {
-    return !!localStorage.getItem('token')
-  }
+
   authLogout() {
     localStorage.removeItem('token')
     this.router.navigate(['/satisfaccion'])
   }
-
+  authLoggedIn() {
+    return !!localStorage.getItem('token')
+  }
   // RUTAS
   routeAdminSatisfacciones() {
     this.router.navigate(['admin/satisfacciones']);
@@ -72,7 +74,7 @@ export class ServiceService {
 
   // HELPERS
 
-  displayErrros(errors: any) {
+  showApiErrors(errors: any) {
     let err1 = Object.values(errors)
     let err2 = err1.flat();
     let addLinea = err2.map(item => {

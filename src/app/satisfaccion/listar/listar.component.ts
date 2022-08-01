@@ -13,8 +13,14 @@ import { GraficoComponent } from '../grafico/grafico.component';
 export class ListarComponent implements OnInit {
 
   satisfacciones: Satisfaccion[];
-  constructor(private service: ServiceService) { }
-
+  constructor(protected service: ServiceService) { }
+  showFormatedDate(date: any) {
+    if (date) {
+      var dateSlice = date.slice(0, 10)
+      var hourSlice = date.slice(10)
+      return dateSlice.split('-').reverse().join('/') + hourSlice
+    }
+  }
   ngOnInit(): void {
     this.service.getSatisfacciones().subscribe(data => {
       this.satisfacciones = data

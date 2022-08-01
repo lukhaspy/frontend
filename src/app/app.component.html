@@ -4,20 +4,20 @@
      
 
         <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
-          <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+          <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start " aria-label="Global">
             <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
               <div class="flex items-center justify-between w-full md:w-auto">
                 <a href="#">
-                  <span class="sr-only">Workflow</span>
-                 <!-- <img alt="Workflow" class="h-8 w-auto sm:h-10" src="https://datapar.com.py/img/logo_G.e9affaa3.png">-->
+                  <span class="sr-only">Test - Ingreso</span>
+                <img alt="Workflow" class="h-8 w-auto sm:h-10" src="https://datapar.com.py/img/logo_G.e9affaa3.png">
                 </a>
               </div>
             </div>
             <div class=" block ml-10 pr-4 flex justify-between flex-wrap">
-              <button  class="  bg-red-100 rounded-lg px-2 py-1 m-1 font-medium text-red-600 hover:text-red-500  " (click)="service.routeClientSatisfaccion()">Calificación </button>
+              <button  class="  bg-red-100 rounded-lg px-2 py-1 m-1 font-medium text-red-600 hover:text-red-500  " (click)="service.routeClientSatisfaccion()"><i class="bi bi-plus-circle"></i> </button>
               <button  class="  bg-red-200 rounded-lg px-2 py-1 m-1 font-medium text-red-600 hover:text-red-500  " (click)="service.routeAdminSatisfacciones()"><i class="bi bi-check2-circle"></i>
                 Resultados </button>
-              <button *ngIf="service.authLoggedIn()" class=" bg-orange-100 rounded-lg p-3 font-medium text-pink-600 hover:text-indigo-500  " (click)="service.authLogout()">Cerrar Sesión</button>
+              <button *ngIf="service.authLoggedIn()" class=" bg-orange-100 rounded-lg p-3 font-medium text-pink-600 hover:text-indigo-500  " (click)="service.authLogout()"><i class="bi bi-box-arrow-right"></i>              </button>
             </div>
           </nav>
         </div>

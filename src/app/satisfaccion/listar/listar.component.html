@@ -1,6 +1,6 @@
 
       <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-        <h1 class="text-6xl font-extrabold text-gray-700 sm:text-2xl md:text-5xl">
+        <h1 class="lg:text-6xl font-extrabold text-gray-700 text-2xl md:text-5xl">
           <span class="block ">Calificaciones </span>
         </h1>    
         <app-grafico></app-grafico>
@@ -32,7 +32,7 @@
                       <tr class="bg-gray-100 border-b" *ngFor="let satisfaccion of satisfacciones">
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{satisfaccion.id}}</td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          {{satisfaccion.fecha}}
+                          {{showFormatedDate(satisfaccion.fecha)}}
                         </td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                           {{satisfaccion.email}}
